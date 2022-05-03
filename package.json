@@ -1,0 +1,14 @@
+{
+  "name": "get-pictures",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "sync": "browser-sync start -s \"src\" -f \".\""
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.27.9"
+  }
+}

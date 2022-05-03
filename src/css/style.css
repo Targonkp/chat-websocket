@@ -1,0 +1,103 @@
+html{
+    padding: 0;
+    margin: 0;
+    font-family: 'Comic Neue', cursive;
+}
+
+.chat-wrap{
+    width: 500px;
+    height: 70vh;
+    margin: 30px auto;
+    padding: 10px;
+    border: 1px solid #ebebeb;
+    box-shadow: 5px 5px 5px #ebebeb;
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+}
+
+.data-input{
+    max-width: 100%;
+    height: auto;
+    border: 3px solid #cfd6eb;
+    padding: 8px 5px;
+    display: flex;
+}
+
+.status{
+    max-width: 100%;
+    padding: 8px 5px;
+    color: #99e65d;
+    font-weight: 600;
+    border: 3px solid #cfd6eb;
+    margin: 16px 0 0 0;
+}
+
+.data-input__input{
+    border: 3px solid #cfd6eb;
+    flex-grow: 2;
+    margin: 0 10px 0 0;
+    height: 24px;
+    outline: none;
+    font-size: 16px;
+}
+
+.data-input__input::placeholder{
+    font-size: 14px;
+}
+
+.data-input__input:focus{
+    border: 3px solid #99e65d;
+}
+
+.data-input__button{
+    flex-grow: 1;
+    border: 2px solid transparent;
+    background: #cad1e6;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 16px;
+}
+
+.data-input__button:hover{
+    border: 2px solid #b1b7cc;
+    background: #e5e6b1;
+}
+
+.data-input__button:active{
+    background: #99e65d;
+}
+
+.data-input__send{
+    margin: 0 10px 0 0;
+}
+
+.data-area{
+    width: 100%;
+    margin: 16px 0 10px 0;
+    border: 3px solid #cfd6eb;
+    box-sizing: border-box;
+    flex-grow: 1;
+    overflow-y: scroll;
+}
+
+.chat-list{
+    list-style-type: none;
+    padding: 0 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-list__element{
+    border: 3px solid #cfd6eb;
+    border-radius: 5px;
+    padding: 5px 14px;
+    display: inline-block;
+    width: fit-content;
+    margin: 3px 0;
+}
+
+.chat-list__element:nth-child(odd){
+    margin-left: auto;
+}
