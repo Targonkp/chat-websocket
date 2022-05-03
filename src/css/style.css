@@ -10,8 +10,14 @@ html{
     margin: 30px auto;
     padding: 10px;
     border: 1px solid #ebebeb;
+    -webkit-box-shadow: 5px 5px 5px #ebebeb;
     box-shadow: 5px 5px 5px #ebebeb;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     font-size: 18px;
 }
@@ -21,6 +27,8 @@ html{
     height: auto;
     border: 3px solid #cfd6eb;
     padding: 8px 5px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
 }
 
@@ -35,11 +43,29 @@ html{
 
 .data-input__input{
     border: 3px solid #cfd6eb;
+    -webkit-box-flex: 2;
+    -ms-flex-positive: 2;
     flex-grow: 2;
     margin: 0 10px 0 0;
     height: 24px;
     outline: none;
     font-size: 16px;
+}
+
+.data-input__input::-webkit-input-placeholder{
+    font-size: 14px;
+}
+
+.data-input__input::-moz-placeholder{
+    font-size: 14px;
+}
+
+.data-input__input:-ms-input-placeholder{
+    font-size: 14px;
+}
+
+.data-input__input::-ms-input-placeholder{
+    font-size: 14px;
 }
 
 .data-input__input::placeholder{
@@ -51,11 +77,16 @@ html{
 }
 
 .data-input__button{
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
     flex-grow: 1;
     border: 2px solid transparent;
     background: #cad1e6;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     cursor: pointer;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
     transition: 0.3s;
     font-size: 16px;
 }
@@ -77,7 +108,10 @@ html{
     width: 100%;
     margin: 16px 0 10px 0;
     border: 3px solid #cfd6eb;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
     flex-grow: 1;
     overflow-y: scroll;
 }
@@ -85,7 +119,12 @@ html{
 .chat-list{
     list-style-type: none;
     padding: 0 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
 }
 
@@ -94,8 +133,12 @@ html{
     border-radius: 5px;
     padding: 5px 14px;
     display: inline-block;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
     width: fit-content;
-    margin: 3px 0;
+    overflow-wrap: anywhere;
+    max-width: 350px;
+    margin: 5px 0;
 }
 
 .chat-list__element:nth-child(odd){

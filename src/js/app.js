@@ -44,15 +44,51 @@ sendMessage.addEventListener('click',
     () => {
         let message = inputEl.value;
         writeToOuptut('Ваше сообщение: ' + message);
-        setTimeout(()=>{websocket.send(message)}, 500);
+        websocket.send(message);
         console.log(message);
+        inputEl.value = '';
     }
     )
 
+//добавляю элемент при фокусе на поле ввода
+inputEl.addEventListener(
+    'focus',
+    () => {
+        //создаю новый элемент и добавляю его с классом chat-list__element-focus
+        let messageFocus = document.createElement("li");
+        messageFocus.className = "chat-list__element chat-list__element-focus";
+        messageFocus.innerHTML = '&#149; &#149; &#149; &#149; &#149;';
+        chatList.appendChild(messageFocus);
+    }
+)
+
+
+//удаляю элемент при отсутствии фокуса на поле ввода
+inputEl.addEventListener(
+    'blur',
+    () => {
+        //нахожу элемент с классом chat-list__element-focus и удаляю его
+        let elementFocus = document.querySelector('.chat-list__element-focus');
+        chatList.removeChild(elementFocus);
+    }
+)
+
+//обработчик имитации печатания текста
 inputEl.addEventListener(
     'keydown',
-    (event) => {
-        console.log(event.key);
+    () => {
+        let elementFocus = document.querySelector('.chat-list__element-focus');
+        let i = 0;
+            if (elementFocus.innerHTML.length <= 8){
+                elementFocus.innerHTML += '&#149; ';
+                i++;
+            }
+            else
+            {
+                i = 0;
+                elementFocus.innerHTML = '';
+            }
+        console.log(elementFocus.innerHTML.length);
     }
 )
 
